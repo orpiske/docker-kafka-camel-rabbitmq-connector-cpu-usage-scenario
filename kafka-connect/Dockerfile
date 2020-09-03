@@ -18,5 +18,6 @@ RUN mkdir -p /kafka/connect/plugins && \
 COPY entrypoint.sh /kafka/connect/entrypoint.sh
 COPY connect-distributed.properties /kafka/connect/config/connect-distributed.properties
 COPY log4j.properties /kafka/connect/config/log4j.properties
+RUN chmod +x /kafka/connect/entrypoint.sh
 
 ENTRYPOINT [ "/kafka/connect/entrypoint.sh" ]
