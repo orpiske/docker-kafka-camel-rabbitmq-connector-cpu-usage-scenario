@@ -88,8 +88,11 @@ services:
     container_name: camel_demo_kafka_connect
     ports:
       - "8083:8083"
+      - "9010:9010"
     environment:
       KAFKA_HEAP_OPTS: "-Xms256M -Xmx1G"
+      KAFKA_JMX_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false  -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.local.only=false -Djava.rmi.server.hostname=0.0.0.0 -Dcom.sun.management.jmxremote.rmi.port=9010 "
+      JMX_PORT: 9010
       KAFKA_LOG4J_OPTS: "-Dlog4j.configuration=file:/kafka/connect/config/log4j.properties"
     depends_on:
       - kafka1
