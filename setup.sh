@@ -50,3 +50,7 @@ fi
 
 echo "CPU usage as reported by top (Irix mode) in the Kafka Connect container"
 docker exec camel_demo_kafka_connect top -b -n 1
+
+sleep 5
+echo "CPU usage as reported by top (Irix mode) in the Kafka Connect container"
+docker exec camel_demo_kafka_connect top -b -n 1
